@@ -1,0 +1,6 @@
+*.pptx
+.idea/
+target/
+dist/
+project/target/
+*.class
