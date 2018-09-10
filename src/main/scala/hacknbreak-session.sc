@@ -149,4 +149,12 @@ transform(list, n => n * n)
 transform(list, _ * 5)
 transform(list, changeValue)
 
+val evenSquares = new ArrayList[Int]()
+for (i <- 0 until list.size) {
+  val value = list.get(i)
+  if (value % 2 == 0) {
+    evenSquares.add(value * value)
+  }
+}
+evenSquares
 
