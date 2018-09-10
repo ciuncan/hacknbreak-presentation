@@ -80,3 +80,24 @@ pet match {
     println("You are Ceyhun's pet " + n)
 }
 
+trait Animal {
+  def makeSound: String
+  def describeMe() =
+    "This animal makes this sound: " +
+      makeSound
+}
+
+case class Cat(name: String) extends Animal {
+  def makeSound = name + " says Meow!!"
+}
+
+trait AngryAnimal extends Animal {
+  override def makeSound = "Grrrr!!!"
+}
+
+val myCat = Cat("Shiro")
+val myBrothersCat = new Cat("Tekila") with AngryAnimal
+
+println(myCat.describeMe())
+println(myBrothersCat.describeMe())
+
