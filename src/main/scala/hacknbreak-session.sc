@@ -158,3 +158,33 @@ for (i <- 0 until list.size) {
 }
 evenSquares
 
+def filter(l: ArrayList[Int],
+           p: Int => Boolean
+          ): ArrayList[Int] = {
+
+  val filteredList = new ArrayList[Int]()
+  for (i <- 0 until list.size) {
+    val value = list.get(i)
+    if (p(value)) {
+      filteredList.add(value)
+    }
+  }
+  filteredList
+}
+
+// first take the even numbers, then square them
+val evenNumbers = transform(
+  filter(list, _ % 2 == 0),
+  n => n * n
+)
+
+// first square the even numbers, then take ones that are less then 8
+filter(
+  transform(
+    list,
+    n => n * n
+  ),
+  _ < 8
+)
+
+
