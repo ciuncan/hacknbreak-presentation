@@ -101,3 +101,26 @@ val myBrothersCat = new Cat("Tekila") with AngryAnimal
 println(myCat.describeMe())
 println(myBrothersCat.describeMe())
 
+val list = new java.util.ArrayList[Int]()
+list.add(1)
+list.add(2)
+list.add(3)
+println(list)
+
+// you can import almost anywhere
+import java.util.ArrayList
+
+val fiveTimes = new ArrayList[Int]()
+for (i <- 0 until list.size) {
+  fiveTimes.add(list.get(i) * 5)
+}
+println(fiveTimes)
+
+
+val squares = new ArrayList[Int]()
+for (i <- 0 until list.size) {
+  val value = list.get(i)
+  fiveTimes.add(value * value)
+}
+println(squares)
+
