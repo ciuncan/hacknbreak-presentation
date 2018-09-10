@@ -124,3 +124,29 @@ for (i <- 0 until list.size) {
 }
 println(squares)
 
+def changeValue(input: Int): Int = {
+  input * 5
+}
+val changeValue: Int => Int = input => input*5
+// same as above:
+// val changeValue: Int => Int = _ * 5
+
+def transform(l: ArrayList[Int],
+              f: Int => Int
+             ): ArrayList[Int] = {
+
+  val newList = new ArrayList[Int]()
+  for (i <- 0 until l.size) {
+    val value = l.get(i)
+    val newValue = f(value)
+    newList.add(newValue)
+  }
+  newList
+}
+
+transform(list, n => n * 5)
+transform(list, n => n * n)
+transform(list, _ * 5)
+transform(list, changeValue)
+
+
