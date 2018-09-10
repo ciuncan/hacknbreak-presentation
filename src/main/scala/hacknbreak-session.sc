@@ -71,3 +71,12 @@ person match {
   case p => println("I don't know you!" + p)
 }
 
+case class Pet(name: String, owner: Person)
+
+val pet = Pet("shiro", person)
+
+pet match {
+  case Pet(n, Person("Ceyhun", _)) =>
+    println("You are Ceyhun's pet " + n)
+}
+
