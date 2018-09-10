@@ -35,9 +35,14 @@ case class Person(
   name: String,
   age: Int
 ) {
-  println("we are body!")
-  override def equals(obj: Any): Boolean =
-    name == obj.asInstanceOf[Person].name
+  println("we are in class body (constructor)!")
+
+  // equals, hashCode and toString
+  // are written for you!
+  // you can override them if you wish so
+
+//  override def equals(obj: Any): Boolean =
+//    name == obj.asInstanceOf[Person].name
 }
 
 val person = Person(
@@ -50,4 +55,19 @@ val person2 = Person(
 )
 println(person.name)
 println(person == person2)
+
+val someValue = 5
+val patternMatchResult = someValue match {
+  case 1 => "one"
+  case 2 => "two"
+  case n if n > 4 =>
+    "some unknown number greater than 4: " + n
+  case _ => "completely unknown number."
+}
+
+person match {
+  case Person("Ceyhun", 30) =>
+    println("I know you! Hi Ceyhun!")
+  case p => println("I don't know you!" + p)
+}
 
